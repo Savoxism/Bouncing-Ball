@@ -33,7 +33,7 @@ pygame.init()
 pygame.mixer.init()  # Initialize Pygame mixer for sound
 
 # Load sound effect
-collision_sound = pygame.mixer.Sound("bruh_sound_effect.mp3")  # Replace with your sound file path
+# collision_sound = pygame.mixer.Sound("bruh_sound_effect.mp3")  # Replace with your sound file path
 
 WIDTH = 800
 HEIGHT = 800
@@ -68,7 +68,7 @@ while running:
     for ball in balls:
         if ball.pos[1] > HEIGHT or ball.pos[1] < 0 or ball.pos[0] > WIDTH or ball.pos[0] < 0:
             balls.remove(ball)
-            # balls.append(Ball(position=[WIDTH // 2, HEIGHT // 2 - 120], velocity=[random.uniform(-5, 5), random.uniform(-1, 1)]))
+            balls.append(Ball(position=[WIDTH // 2, HEIGHT // 2 - 120], velocity=[random.uniform(-5, 5), random.uniform(-1, 1)]))
             balls.append(Ball(position=[WIDTH // 2, HEIGHT // 2 - 120], velocity=[random.uniform(-5, 5), random.uniform(-1, 1)]))
         
         # Update ball position
@@ -83,7 +83,7 @@ while running:
                 
             if ball.is_in:
                 # Play sound on collision
-                collision_sound.play()
+                # collision_sound.play()
                 
                 # Reflect ball velocity
                 d = ball.pos - CIRCLE_CENTER
